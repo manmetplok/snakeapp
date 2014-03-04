@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+var HOST = 'http://bak'
 var app = {
     socket: null,
 
@@ -45,7 +45,7 @@ var app = {
     start: function () {
 
         console.log("Connecting!!!!");
-        app.socket = io.connect('http://10.0.0.239', {'port': 5000, 'force new connection': true});
+        app.socket = io.connect(HOST, {'port': 5000, 'force new connection': true});
         app.socket.emit('start', {'name':'henk', 'color':'#ff0000'}) ;
     },
 
