@@ -1,0 +1,38 @@
+#Clone the project
+git clone git@github.com:manmetplok/snakeapp.git
+
+#Add a platform
+cordova platform add android 
+
+#Run the app (connect a phone first!)
+cordova run android
+
+#File locations:
+ - www/index.html   ->  The html page thats loaded by cordova.
+ - www/js/index.js  ->  The javascript file that contains the logic.
+
+#Available javascript calls:
+ - up()
+ - down()
+ - left()
+ - right()
+
+#Available websocket messages ( not need for a working app )
+Events from server:
+ - snakes           -> Send to all clients every few milleseconds with detailed information about each snake. *Use with care*
+``` 
+{"name":"snakes","args":[{"type":"snakes","value":[{"name":"henk","color":"#ff0000","id":3,"deaths":0,"length":8,"direction":"right","elements":[[39,22],[40,22],[41,22],[42,22],[43,22],[44,22],[45,22],[46,22]],"kills":0}]}]}
+```
+ - snakeAdded       -> Send to all clients when a new snake enters the game.
+ ```
+ {"name":"snakeAdded","args":[{"id":1,"name":"henk"}]}
+ ```
+ - snakeRemoved     -> Send to all clients when a snake leaves the game.
+```
+{"id": 1}
+```
+ - id               -> Send when the client connects, contains the id for the current client.
+ ```
+ {"name":"id","args":[{"id":1}]}
+ ```
+ 
