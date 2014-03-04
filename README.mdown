@@ -29,7 +29,7 @@ cordova run android
  - www/js/index.js  ->  The javascript file that contains the logic.
 
 ##Available javascript calls:
- - app.start(name, color)   -> Start the game with a username and color for the snake.
+ - app.start(name, color)   -> Start the game with a username and color for the snake. (Now called automaticly when the app is started)
  - up()                     -> Move up
  - down()                   -> Move down
  - left()                   -> Move left
