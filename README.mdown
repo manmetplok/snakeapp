@@ -1,23 +1,41 @@
-#Clone the project
+#Snake!
+
+##Goal
+The goal is to create an interface to the snake game.
+The clients connect to a server which allows to play snake against other players.
+At the end of the workshop everyone should atleast have implemented the basic controls needed for the game: navigate up, down, left and right.
+Also the user should be able to pick a name and a color for the snake.
+Of coarse its possible to show more information in the app, like the current ranking and even a live screen with the current position of the snakes.
+
+
+##Servers
+There are 2 servers running: 
+
+ - http://bak:5000
+ - http://vis:5000
+
+
+##Clone the project
 git clone git@github.com:manmetplok/snakeapp.git
 
-#Add a platform
+##Add a platform
 cordova platform add android 
 
-#Run the app (connect a phone first!)
+##Run the app (connect a phone first!)
 cordova run android
 
-#File locations:
+##File locations:
  - www/index.html   ->  The html page thats loaded by cordova.
  - www/js/index.js  ->  The javascript file that contains the logic.
 
-#Available javascript calls:
- - up()
- - down()
- - left()
- - right()
+##Available javascript calls:
+ - app.start(name, color)   -> Start the game with a username and color for the snake.
+ - up()                     -> Move up
+ - down()                   -> Move down
+ - left()                   -> Move left
+ - right()                  -> Move right
 
-#Available websocket messages ( not need for a working app )
+##Available websocket messages ( not need for a working app )
 Events from server:
  - snakes           -> Send to all clients every few milleseconds with detailed information about each snake. *Use with care*
 ```
